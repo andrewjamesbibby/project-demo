@@ -1,23 +1,14 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    DASHBOARD!!
-                    You are logged in!
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+    @include('layouts.partials.head')
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+        @include('layouts.partials.navbar')
+        <div class="app-body">
+            @include('layouts.partials.sidebar')
+            @include('layouts.partials.main')
         </div>
-    </div>
-</div>
-@endsection
+        @include('layouts.partials.footer')
+        @include('layouts.partials.scripts')
+    </body>
+</html>
+
