@@ -1,9 +1,12 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Public Routes
+Route::get('/','WelcomeController');
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Protected Routes
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+
