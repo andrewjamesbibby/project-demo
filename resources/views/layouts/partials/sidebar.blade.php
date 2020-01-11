@@ -12,7 +12,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('employees') }}">
-                    <i class="nav-icon icon-pencil"></i> Employees</a>
+                    <i class="nav-icon icon-people"></i> Employees</a>
             </li>
         </ul>
     </nav>
