@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCompanyRequest;
+use Illuminate\Support\Facades\Input;
 use App\Company;
 
 class CompaniesController extends Controller
@@ -11,7 +13,19 @@ class CompaniesController extends Controller
         return view('companies.index');
     }
 
-    public function show(Company $company)
+    public function create()
+    {
+        return view('companies.create');
+    }
+
+    public function store(CreateCompanyRequest $request)
+    {
+        if($request->handle()){
+            return response()->redirectToRoute('companies.index')->withInput(Input::all());
+        }
+    }
+
+    public function show()
     {
         return view('companies.show');
     }

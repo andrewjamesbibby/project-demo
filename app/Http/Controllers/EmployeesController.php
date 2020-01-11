@@ -11,6 +11,11 @@ class EmployeesController extends Controller
         return view('employees.index');
     }
 
+    public function create()
+    {
+        return view('employees.create');
+    }
+
     public function show(Employee $employee)
     {
         return view('employees.show');
