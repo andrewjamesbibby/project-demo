@@ -19,14 +19,14 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input id="email" name="email" class="form-control" type="text" {{ old('email') }}>
+                            <input id="email" name="email" class="form-control" type="text" value="{{ old('email') }}">
                             @error('email')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="website">Website</label>
-                            <input id="website" name="website" class="form-control" type="text" {{ old('website') }}>
+                            <input id="website" name="website" class="form-control" type="text" value="{{ old('website') }}">
                             @error('website')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
