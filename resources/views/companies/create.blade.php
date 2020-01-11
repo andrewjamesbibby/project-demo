@@ -8,7 +8,6 @@
                     <strong>Create Company</strong>
                 </div>
                 <div class="card-body">
-
                     <form action="{{ route('companies.store') }}" method="POST" class="form-horizontal">
                         @csrf
                         <div class="form-group">
