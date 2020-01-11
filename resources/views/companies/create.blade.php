@@ -11,7 +11,7 @@
                     <form action="{{ route('companies.store') }}" method="POST" class="form-horizontal">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Name <span class="text-danger">*</span></label>
                             <input id="name" name="name" class="form-control" type="text" value="{{ old('name') }}">
                             @error('name')
                                 <p class="text-danger">{{ $message }}</p>

@@ -10,7 +10,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/employees', 'EmployeesController@index')->name('employees.index');
     Route::get('/employees/create', 'EmployeesController@create')->name('employees.create');
-    Route::post('/employees', 'EmployeesController@create')->name('employees.store');
+    Route::post('/employees', 'EmployeesController@store')->name('employees.store');
     Route::get('/employees/{employee}', 'EmployeesController@show')->name('employees.show');
     Route::delete('/employees/{employee}', 'EmployeesController@destroy')->name('employees.destroy');
 

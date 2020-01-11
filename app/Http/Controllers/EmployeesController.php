@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateEmployeeRequest;
 use App\Employee;
+use App\Company;
 
 class EmployeesController extends Controller
 {
@@ -13,10 +15,15 @@ class EmployeesController extends Controller
 
     public function create()
     {
+        $companies = Company::select('id', 'name')->get();
+        return view('employees.create', ['companies' => $companies]);
+    }
 
-
-
-        return view('employees.create');
+    public function store(CreateEmployeeRequest $request)
+    {
+        if($request->handle()){
+            return response()->redirectToRoute('employees.index');
+        }
     }
 
     public function show(Employee $employee)

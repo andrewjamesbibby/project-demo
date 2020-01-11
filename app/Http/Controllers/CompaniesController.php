@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCompanyRequest;
-use Illuminate\Support\Facades\Input;
 use App\Company;
 
 class CompaniesController extends Controller
@@ -21,7 +20,7 @@ class CompaniesController extends Controller
     public function store(CreateCompanyRequest $request)
     {
         if($request->handle()){
-            return response()->redirectToRoute('companies.index')->withInput(Input::all());
+            return response()->redirectToRoute('companies.index');
         }
     }
 
