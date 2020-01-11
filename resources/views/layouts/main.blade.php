@@ -8,7 +8,7 @@
     <main class="main">
         @include('layouts.partials.breadcrumbs')
         <div class="container-fluid">
-            <div class="animated fadeIn">
+            <div class="animated fadeIn mt-4">
                 @yield('content')
             </div>
         </div>

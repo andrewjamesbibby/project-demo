@@ -6,3 +6,11 @@
  */
 
 require('./bootstrap');
+
+// Initialise App
+import App from './custom'
+
+App.init();
+
+
+

@@ -16,6 +16,15 @@ class CompaniesDatatablesController extends Controller
             ->setRowId(function($company) {
                 return $company->id;
             })
+            ->editColumn('email', function($company) {
+                return "<a href='mailto:" . $company->email . "'>" . $company->email . "</a>";
+            })
+            ->addColumn('actions', function($row){
+                return '
+                    <button class="btn btn-sm btn-primary view" type="button">view</button>
+                    <button class="btn btn-sm btn-danger delete" type="button">delete</button>
+                ';
+            })
             ->escapeColumns([])
             ->make(true);
     }
