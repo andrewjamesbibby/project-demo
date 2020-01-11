@@ -39887,11 +39887,13 @@ try {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _datatables_companiesDatatable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./datatables/companiesDatatable */ "./resources/js/datatables/companiesDatatable.js");
+/* harmony import */ var _datatables_employeesDatatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./datatables/employeesDatatable */ "./resources/js/datatables/employeesDatatable.js");
+
 
 
 var init = function init() {
-  // Initialise datatables
   _datatables_companiesDatatable__WEBPACK_IMPORTED_MODULE_0__["default"].init();
+  _datatables_employeesDatatable__WEBPACK_IMPORTED_MODULE_1__["default"].init();
 };
 
 var App = {
@@ -39969,6 +39971,88 @@ var removeCompany = function removeCompany(e) {
   axios["delete"]("/companies/".concat($rowId)).then(function (response) {
     companiesTable.draw(false);
     toastr__WEBPACK_IMPORTED_MODULE_0___default.a.success('Company removed successfully');
+  })["catch"](function (error) {
+    toastr__WEBPACK_IMPORTED_MODULE_0___default.a.error('Error - please try again.');
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  init: init
+});
+
+/***/ }),
+
+/***/ "./resources/js/datatables/employeesDatatable.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/datatables/employeesDatatable.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_0__);
+
+var employeesTable;
+/**
+ * Initializes the Module
+ */
+
+var init = function init() {
+  setupTable();
+  bindDom();
+};
+/**
+ * Bind DOM
+ *
+ * Binds any events in one convenient location
+ */
+
+
+var bindDom = function bindDom() {
+  $('#employees_datatable').on('click', '.delete', removeEmployee);
+};
+/**
+ * Setup Table
+ *
+ * Initializes and configs the companies DataTable
+ */
+
+
+var setupTable = function setupTable() {
+  employeesTable = $('#employees_datatable').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "/datatables/employees",
+    columns: [{
+      data: 'name',
+      name: 'name'
+    }, {
+      data: 'email',
+      name: 'email'
+    }, {
+      data: 'phone',
+      name: 'phone'
+    }, {
+      data: 'actions',
+      name: 'actions'
+    }]
+  });
+};
+/**
+ * Remove Employee
+ *
+ * Makes an delete axios call to server to remove
+ * employee from the system database
+ */
+
+
+var removeEmployee = function removeEmployee(e) {
+  var $rowId = $(e.target).closest('tr').attr('id');
+  axios["delete"]("/employees/".concat($rowId)).then(function (response) {
+    employeesTable.draw(false);
+    toastr__WEBPACK_IMPORTED_MODULE_0___default.a.success('Employee removed successfully');
   })["catch"](function (error) {
     toastr__WEBPACK_IMPORTED_MODULE_0___default.a.error('Error - please try again.');
   });

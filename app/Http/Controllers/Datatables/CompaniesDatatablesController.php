@@ -22,8 +22,12 @@ class CompaniesDatatablesController extends Controller
             ->addColumn('actions', function($company){
                 return '
                     <div class="d-flex justify-content-center">
-                        <a href="companies/' . $company->id . '" class="btn btn-sm btn-primary ml-1 view" type="button">view</a>
-                        <button class="btn btn-sm btn-danger ml-1 delete" type="button">delete</button>
+                        <a href="companies/' . $company->id . '" class="btn btn-sm btn-primary ml-1 view" type="button">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <button class="btn btn-sm btn-danger ml-1 delete" type="button">
+                            <i class="fa fa-trash"></i>
+                        </button>
                     </div>
                 ';
             })
