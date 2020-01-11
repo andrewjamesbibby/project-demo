@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-    Dashboard
+    Companies
 @endsection
 
