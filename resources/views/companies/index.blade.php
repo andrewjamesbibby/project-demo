@@ -4,20 +4,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Add Company</div>
-                <div class="card-body">
-                    Form here......
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
                 <div class="card-header">Companies Information</div>
                 <div class="card-body">
-                    <table id="companies_datatable" class="table table-bordered table-hover">
+                    <table id="companies_datatable" class="table table-bordered table-hover w-100">
                         <thead>
                             <tr>
                                 <th>Company Name</th>

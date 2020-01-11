@@ -19,10 +19,12 @@ class CompaniesDatatablesController extends Controller
             ->editColumn('email', function($company) {
                 return "<a href='mailto:" . $company->email . "'>" . $company->email . "</a>";
             })
-            ->addColumn('actions', function($row){
+            ->addColumn('actions', function($company){
                 return '
-                    <button class="btn btn-sm btn-primary view" type="button">view</button>
-                    <button class="btn btn-sm btn-danger delete" type="button">delete</button>
+                    <div class="d-flex justify-content-center">
+                        <a href="companies/' . $company->id . '" class="btn btn-sm btn-primary ml-1 view" type="button">view</a>
+                        <button class="btn btn-sm btn-danger ml-1 delete" type="button">delete</button>
+                    </div>
                 ';
             })
             ->escapeColumns([])

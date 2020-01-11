@@ -1,10 +1,10 @@
-import compapaniesDatatable from './datatables/companiesDatatable'
+import companiesDatatable from './datatables/companiesDatatable'
 
 
 const init = () => {
 
-    // Initialise Datatables
-    compapaniesDatatable.init();
+    // Initialise datatables
+    companiesDatatable.init();
 }
 
 const App = {

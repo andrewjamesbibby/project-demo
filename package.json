@@ -29,6 +29,7 @@
         "datatables.net": "^1.10.20",
         "datatables.net-bs4": "^1.10.20",
         "perfect-scrollbar": "^1.4.0",
-        "simple-line-icons": "^2.4.1"
+        "simple-line-icons": "^2.4.1",
+        "toastr": "^2.1.4"
     }
 }
