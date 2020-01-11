@@ -6,9 +6,9 @@
 <div class="app-body">
     @include('layouts.partials.sidebar')
     <main class="main">
-        @include('layouts.partials.breadcrumbs')
         <div class="container-fluid">
             <div class="animated fadeIn mt-4">
+                @include('layouts.partials.toolbar')
                 @yield('content')
             </div>
         </div>
