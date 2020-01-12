@@ -16,7 +16,7 @@ class CompanyObserver
      */
     public function created(Company $company)
     {
-        //Mail::to('test@test.com')->send(new NewCompanyMail($company));
+        Mail::to('test@test.com')->send(new NewCompanyMail($company));
     }
 
 }
