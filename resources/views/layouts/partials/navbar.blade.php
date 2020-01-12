@@ -3,7 +3,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="/img/brand/logo.svg" width="89" height="25" alt="Logo">
+        <img class="navbar-brand-full" src="/img/brand/logo.png" width="89" height="25" alt="Logo">
         <img class="navbar-brand-minimized" src="/img/brand/sygnet.svg" width="30" height="30" alt="Mini Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -13,7 +13,7 @@
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <img class="img-avatar" src="/img/avatars/1.jpg" alt="user">
+                <img class="img-avatar" src="/img/avatars/1.png" alt="user">
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="{{ route('logout') }}"

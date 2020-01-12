@@ -12408,3 +12408,10 @@ button.toast-close-button {
   }
 }
 
+img.company_profile {
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  border: solid 1px #dee2e6;
+}
+
