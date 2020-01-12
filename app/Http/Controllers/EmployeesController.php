@@ -28,7 +28,7 @@ class EmployeesController extends Controller
 
     public function show(Employee $employee)
     {
-        return view('employees.show');
+        return view('employees.show', ['employee' => $employee]);
     }
 
     public function destroy(Employee $employee)
