@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Employee;
+use App\Company;
 
 class DashboardController extends Controller
 {
@@ -13,6 +14,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $stats = [
+            'total_employees' => Employee::all()->count(),
+            'total_companies' => Company::all()->count(),
+        ];
+
+        return view('dashboard', [ 'stats' => $stats ]);
     }
 }

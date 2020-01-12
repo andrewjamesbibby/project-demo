@@ -3,7 +3,27 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Companies
+                </div>
+                <div class="card-body">
+                    Total Companies: {{ $stats['total_companies'] }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Employees
+                </div>
+                <div class="card-body">
+                    Total Employees: {{ $stats['total_employees'] }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
                     System Language
