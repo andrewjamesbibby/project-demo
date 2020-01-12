@@ -16,7 +16,7 @@
                                         <i class="icon-user"></i>
                                     </span>
                                 </div>
-                                <input class="form-control" type="text" name="email" placeholder="Email">
+                                <input class="form-control" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
                             </div>
                             @error('email')
                                 <p class="text-danger">{{ $message }}</p>
