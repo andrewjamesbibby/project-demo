@@ -30,6 +30,7 @@ class UpdateLanguageRequest extends FormRequest
 
     public function handle()
     {
-        session(['applocale' => $this->language ]);
+        cache()->forever('applocale',$this->language);
+        return true;
     }
 }

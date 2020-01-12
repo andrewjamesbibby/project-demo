@@ -8,6 +8,8 @@ class LanguagesController extends Controller
 {
     public function __invoke(UpdateLanguageRequest $request)
     {
-        $request->handle();
+        if($request->handle()){
+            return redirect()->back();
+        }
     }
 }
