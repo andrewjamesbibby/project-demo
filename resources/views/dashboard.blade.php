@@ -2,5 +2,8 @@
 
 @section('content')
     Dashboard
+
+    Locale -
+    {{ app()->getLocale()  }}
 @endsection
 
