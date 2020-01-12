@@ -6,17 +6,19 @@
             <div class="card">
                 <div class="card-header">@lang('custom.companies_information')</div>
                 <div class="card-body">
-                    <table id="companies_datatable" class="table table-bordered table-responsive table-hover w-100">
-                        <thead>
+                    <div class="table-responsive">
+                        <table id="companies_datatable" class="table table-bordered table-hover w-100">
+                            <thead>
                             <tr>
                                 <th>Company Name</th>
                                 <th>Email</th>
                                 <th>Actions</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
