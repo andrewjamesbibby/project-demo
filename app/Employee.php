@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\RecordsActivity;
 
 class Employee extends Model
 {
+    use RecordsActivity;
+
     /**
      * The attributes that are mass assignable.
      *

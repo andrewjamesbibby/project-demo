@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use App\Audit;
+
 trait RecordsActivity
 {
     /**
@@ -72,7 +74,7 @@ trait RecordsActivity
 
         switch ($name) {
             case 'company':
-                return $event . ' user ' . $model->name;
+                return $event . ' company ' . $model->name;
                 break;
 
             case 'employee':
