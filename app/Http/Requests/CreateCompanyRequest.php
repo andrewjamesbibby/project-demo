@@ -29,7 +29,7 @@ class CreateCompanyRequest extends FormRequest
             'name'    => 'required|max:100',
             'email'   => 'nullable|email|max:150',
             'website' => 'nullable|url|max:200',
-            'logo'    => 'nullable',
+            'logo'    => 'nullable|dimensions:min_width=100,min_height=100',
         ];
     }
 
@@ -48,7 +48,7 @@ class CreateCompanyRequest extends FormRequest
     /**
      * Handle
      *
-     * Handles teh request - creates new company record
+     * Handles the request - creates new company record
      *
      * @return bool
      */
