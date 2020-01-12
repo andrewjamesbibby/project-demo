@@ -2,8 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Company;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Company;
 
 class CreateCompanyRequest extends FormRequest
 {
@@ -28,7 +29,7 @@ class CreateCompanyRequest extends FormRequest
             'name'    => 'required|max:100',
             'email'   => 'nullable|email|max:150',
             'website' => 'nullable|url|max:200',
-            'logo'    => 'nullable|dimensions:min_width=100,min_height=100',
+            'logo'    => 'nullable',
         ];
     }
 
@@ -44,14 +45,50 @@ class CreateCompanyRequest extends FormRequest
         ];
     }
 
+    /**
+     * Handle
+     *
+     * Handles teh request - creates new company record
+     *
+     * @return bool
+     */
     public function handle()
     {
-        Company::create([
-            'name'    => $this->name,
-            'email'   => $this->email,
-            'website' => $this->website,
-        ]);
+        $company = new Company();
+        $company->name = $this->name;
+        $company->email = $this->email;
+        $company->website = $this->website;
 
-        return true;
+        if($this->file('logo')){
+            $company->logo = $this->storeLogo();
+        }
+
+        if($company->save()){
+            return true;
+        }
+
+        return false;
     }
+
+    /**
+     * Store Logo
+     *
+     * Persists an uploaded logo to storage
+     *
+     * @return string
+     */
+    private function storeLogo()
+    {
+        $uploadedFile = $this->file('logo');
+        $filename = time() . '_' . $uploadedFile->getClientOriginalName();
+
+        Storage::disk('local')->putFileAs(
+            'public/logos/',
+            $uploadedFile,
+            $filename
+        );
+
+        return $filename;
+    }
+
 }
