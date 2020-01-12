@@ -38,6 +38,11 @@ php artisan serve
 
 8. Navigate to http://127.0.0.1:8000 and login with admin@domain.com | password
 
+9. To ensure images are correctly linked between storage and public folders run:
+```
+php artisan storage:link
+```
+
  ### Testing
 To run unit test - ensure the test database exists (see above) and run:
 ````
