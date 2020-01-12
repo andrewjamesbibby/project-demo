@@ -20,11 +20,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/companies/{company}', 'CompaniesController@show')->name('companies.show');
     Route::delete('/companies/{company}', 'CompaniesController@destroy')->name('companies.destroy');
 
-    Route::post('/language', 'LanguagesController')->name('languages');
+    Route::post('/language', 'LanguagesController')->name('languages.index');
+    Route::get('/logs', 'LogsController')->name('logs.index');
 
     // Datatables
-    Route::get('datatables/companies', 'Datatables\CompaniesDatatablesController@index');
-    Route::get('datatables/employees', 'Datatables\EmployeesDatatablesController@index');
+    Route::get('datatables/companies', 'Datatables\CompaniesDatatablesController');
+    Route::get('datatables/employees', 'Datatables\EmployeesDatatablesController');
+    Route::get('datatables/logs', 'Datatables\LogsDatatablesController');
 
 });
 

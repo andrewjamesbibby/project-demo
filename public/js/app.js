@@ -39888,12 +39888,15 @@ try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _datatables_companiesDatatable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./datatables/companiesDatatable */ "./resources/js/datatables/companiesDatatable.js");
 /* harmony import */ var _datatables_employeesDatatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./datatables/employeesDatatable */ "./resources/js/datatables/employeesDatatable.js");
+/* harmony import */ var _datatables_logsDatatable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./datatables/logsDatatable */ "./resources/js/datatables/logsDatatable.js");
+
 
 
 
 var init = function init() {
   _datatables_companiesDatatable__WEBPACK_IMPORTED_MODULE_0__["default"].init();
   _datatables_employeesDatatable__WEBPACK_IMPORTED_MODULE_1__["default"].init();
+  _datatables_logsDatatable__WEBPACK_IMPORTED_MODULE_2__["default"].init();
 };
 
 var App = {
@@ -40055,6 +40058,54 @@ var removeEmployee = function removeEmployee(e) {
     toastr__WEBPACK_IMPORTED_MODULE_0___default.a.success('Employee removed successfully');
   })["catch"](function (error) {
     toastr__WEBPACK_IMPORTED_MODULE_0___default.a.error('Error - please try again.');
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  init: init
+});
+
+/***/ }),
+
+/***/ "./resources/js/datatables/logsDatatable.js":
+/*!**************************************************!*\
+  !*** ./resources/js/datatables/logsDatatable.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var logTable;
+/**
+ * Initializes the Module
+ */
+
+var init = function init() {
+  setupTable();
+};
+/**
+ * Setup Table
+ *
+ * Initializes and configs the companies DataTable
+ */
+
+
+var setupTable = function setupTable() {
+  logTable = $('#logs_datatable').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "/datatables/logs",
+    columns: [{
+      data: 'action',
+      name: 'action'
+    }, {
+      data: 'message',
+      name: 'message'
+    }, {
+      data: 'created_at',
+      name: 'created_at'
+    }]
   });
 };
 

@@ -8,11 +8,15 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('companies.index') }}">
-                    <i class="nav-icon icon-drop"></i> Companies</a>
+                    <i class="nav-icon icon-notebook"></i> Companies</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('employees.index') }}">
                     <i class="nav-icon icon-people"></i> Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logs.index') }}">
+                    <i class="nav-icon icon-doc"></i> Log</a>
             </li>
         </ul>
     </nav>

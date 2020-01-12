@@ -8,7 +8,7 @@ use App\Employee;
 
 class EmployeesDatatablesController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         $employees = Employee::all();
 

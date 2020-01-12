@@ -8,7 +8,7 @@ use App\Company;
 
 class CompaniesDatatablesController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         $companies = Company::all();
 
