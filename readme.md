@@ -1,6 +1,6 @@
 ## Project Demo
 
-This is a dmeo of a basic CRM in Laravel. It is themed with Core UI.
+This is a demo of a basic CRM in Laravel. It is themed with Core UI.
 
 ### Installation
 
