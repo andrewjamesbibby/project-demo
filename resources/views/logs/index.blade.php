@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">System Logs</div>
+                <div class="card-header">@lang('custom.system_logs')</div>
                 <div class="card-body">
                     <table id="logs_datatable" class="table table-bordered table-hover w-100">
                         <thead>

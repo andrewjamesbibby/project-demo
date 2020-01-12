@@ -3,20 +3,23 @@
         <ul class="nav">
             <li class="nav-item mt-4">
                 <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="nav-icon icon-speedometer"></i> Dashboard
+                    <i class="nav-icon icon-speedometer"></i> @lang('custom.dashboard')
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('companies.index') }}">
-                    <i class="nav-icon icon-notebook"></i> Companies</a>
+                    <i class="nav-icon icon-notebook"></i>  @lang('custom.companies')
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('employees.index') }}">
-                    <i class="nav-icon icon-people"></i> Employees</a>
+                    <i class="nav-icon icon-people"></i> @lang('custom.employees')
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logs.index') }}">
-                    <i class="nav-icon icon-doc"></i> Log</a>
+                    <i class="nav-icon icon-doc"></i> @lang('custom.log')
+                </a>
             </li>
         </ul>
     </nav>

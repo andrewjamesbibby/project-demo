@@ -6,7 +6,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    Companies
+                    @lang('custom.companies')
                 </div>
                 <div class="card-body">
                     Total Companies: {{ $stats['total_companies'] }}
@@ -16,7 +16,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    Employees
+                    @lang('custom.employees')
                 </div>
                 <div class="card-body">
                     Total Employees: {{ $stats['total_employees'] }}
@@ -26,7 +26,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    System Language
+                    @lang('custom.system_language')
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('languages.store') }}">
