@@ -24,9 +24,9 @@ class CompaniesController extends Controller
         }
     }
 
-    public function show()
+    public function show(Company $company)
     {
-        return view('companies.show');
+        return view('companies.show', ['company' => $company]);
     }
 
     public function destroy(Company $company)
