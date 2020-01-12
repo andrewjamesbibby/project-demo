@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">@lang('custom.system_logs')</div>
                 <div class="card-body">
-                    <table id="logs_datatable" class="table table-bordered table-hover w-100">
+                    <table id="logs_datatable" class="table table-bordered table-responsive table-hover w-100">
                         <thead>
                         <tr>
                             <th>Action</th>
