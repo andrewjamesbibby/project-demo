@@ -1,15 +1,12 @@
 
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * This is where all of the applications js
+ * is bootstrapped and initialized.
  */
-
 require('./bootstrap');
 
 // Initialise App
 import App from './custom'
-
 App.init();
 
 
